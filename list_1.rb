@@ -3,13 +3,12 @@ class List
 ## Start List Node
   class Node
     attr_accessor :value, :next
+      def initialize(value = nil, nxt = nil)
+        @value = value
+        @next = nxt
+      end
   end
-
 ## Then the Basic List
-
-  def initialize()
-    @node = nil
-  end
 
   # empty?
   def empty?
@@ -19,8 +18,8 @@ class List
 
   # head=
   def head=(value)
-    unless empty?
-      @node.value = value
+    if empty?
+      nil
     else
       @node = Node.new
       @node.value = value
